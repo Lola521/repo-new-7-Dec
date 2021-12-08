@@ -1,0 +1,19 @@
+<h1><%= @restaurant.name %> </h1>
+
+<ol>
+  <li><%= @restaurant.address %></li>
+  <li><%= @restaurant.category %></li>
+</ol>
+
+<%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure ?"} %>
+<%= link_to "Back to list", restaurants_path %>
+
+<ol>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %></li>
+    <%= link_to "Review delete", review_path(review), method: :delete, data: { confirm: "Are you sure? "} %>
+  <% end %>
+</ol>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
