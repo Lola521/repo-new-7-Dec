@@ -36,10 +36,3 @@ module RailsYelpMvp
     config.generators.system_tests = nil
   end
 end
-
-module RailsApp
-  class Application < Rails::Application
-    config.time_zone = 'UTC +01:00'
-    config.active_record.default_timezone = 'Pacific Time (US & Canada)'
-  end
-end
