@@ -5,9 +5,6 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def show
-  end
-
   def new
     @restaurant = Restaurant.new
   end
@@ -20,9 +17,6 @@ class RestaurantsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update
