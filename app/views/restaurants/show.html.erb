@@ -5,5 +5,13 @@
   <li><%= @restaurant.category %></li>
 </ol>
 
-<%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure ?"} %>
+<h2> Reviews </h2>
+  <% @restaurant.reviews.each do |review| %>
+   <li><%= review.content %></li>
+   <li><%= review.rating %></li>
+  <% end %>
+
+<%= link_to "add a review", restaurant_reviews_path(@restaurant) %>
+
+<br>
 <%= link_to "Back to list", restaurants_path %>
