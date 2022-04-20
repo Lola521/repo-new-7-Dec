@@ -22,11 +22,6 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  def destroy
-    @restaurant.destroy
-    redirect_to restaurants_path
-  end
-
   private
 
   def set_restaurant
