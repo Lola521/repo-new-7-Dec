@@ -4,6 +4,9 @@
   <% @restaurant.reviews.each do |review| %>
    <li><%= review.content %></li>
    <li><%= 'rating: ' %><%= review.rating %></li>
+   <%= link_to "remove", review_path,
+            method: :delete,
+            data: { confirm: "Are you sure?"}%>
   <% end %>
 
 <%= link_to "add a review", new_restaurant_review_path(@restaurant) %>

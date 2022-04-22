@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, except: [:index, :new, :create]
+  before_action :set_restaurant, except: [:index, :new, :create, :italian]
 
   def index
     @restaurants = Restaurant.all
@@ -21,6 +21,14 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def destroy
+    @restaurant.destroy
+    redirect_to restaurants_path
+  end
+
+  def italian
+    @restaurants = Restaurant.where(category: 'italian')
+  end
 
   private
 
